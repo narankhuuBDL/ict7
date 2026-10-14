@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ICT 7th Grade - Teacher Narankhuu B</title>
+  <title>ICT 7th Grade-Narankhuu B</title>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
@@ -17,39 +17,188 @@
       --accent-yellow: #f59e0b;
       --text: #f8fafc;
       --text-muted: #94a3b8;
-      --border: rgba(255, 255, 255, 0.1);
+      --border: rgba(255, 255, 255, 0.12);
     }
 
     /* THEME STYLES */
-    body[data-theme="purple"] { --bg: #1e102a; --card-bg: rgba(45, 20, 65, 0.7); --border: rgba(168, 85, 247, 0.2); --text: #faf5ff; }
-    body[data-theme="ocean"] { --bg: #031b33; --card-bg: rgba(10, 40, 75, 0.7); --border: rgba(56, 189, 248, 0.2); --text: #f0f9ff; }
-    body[data-theme="forest"] { --bg: #062319; --card-bg: rgba(12, 50, 36, 0.7); --border: rgba(34, 197, 94, 0.2); --text: #f0fdf4; }
-    body[data-theme="light"] { --bg: #f1f5f9; --card-bg: rgba(255, 255, 255, 0.85); --border: rgba(0, 0, 0, 0.1); --text: #0f172a; --text-muted: #64748b; }
+    body[data-theme="purple"] { --bg: #1e102a; --card-bg: rgba(45, 20, 65, 0.7); --border: rgba(168, 85, 247, 0.25); --text: #faf5ff; }
+    body[data-theme="ocean"] { --bg: #031b33; --card-bg: rgba(10, 40, 75, 0.7); --border: rgba(56, 189, 248, 0.25); --text: #f0f9ff; }
+    body[data-theme="forest"] { --bg: #062319; --card-bg: rgba(12, 50, 36, 0.7); --border: rgba(34, 197, 94, 0.25); --text: #f0fdf4; }
+    body[data-theme="light"] { --bg: #f1f5f9; --card-bg: rgba(255, 255, 255, 0.85); --border: rgba(0, 0, 0, 0.12); --text: #0f172a; --text-muted: #64748b; }
 
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
     body { background: var(--bg); color: var(--text); min-height: 100vh; padding-bottom: 50px; transition: background 0.3s, color 0.3s; }
 
+    /* 🌟 CENTERED MENU HEADER DESIGN */
     header {
-      background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100;
-      border-bottom: 1px solid var(--border); padding: 12px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     }
-    .logo { font-size: 1.4rem; font-weight: 800; background: linear-gradient(to right, var(--accent-green), var(--accent-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    
-    .nav-tabs { display: flex; gap: 8px; background: rgba(255,255,255,0.05); padding: 5px; border-radius: 10px; border: 1px solid var(--border); overflow-x: auto; }
-    .tab-btn { padding: 8px 14px; border: none; background: transparent; color: var(--text-muted); font-weight: 700; cursor: pointer; border-radius: 6px; transition: 0.3s; white-space: nowrap; font-size: 0.85rem; }
-    .tab-btn.active { background: var(--accent-green); color: #000; }
 
-    .nav-controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-    .class-selector { display: flex; background: rgba(255, 255, 255, 0.05); padding: 3px; border-radius: 8px; border: 1px solid var(--border); }
-    .class-btn { padding: 5px 12px; border: none; background: transparent; color: var(--text-muted); font-weight: 700; cursor: pointer; border-radius: 6px; transition: 0.3s; font-size: 0.85rem; }
-    .class-btn.active { background: var(--accent-blue); color: #000; }
+    .logo {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      font-size: 1.35rem;
+      font-weight: 800;
+      white-space: nowrap;
+      background: linear-gradient(135deg, #38bdf8 0%, #a855f7 50%, #22c55e 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shineText 6s linear infinite;
+    }
+    @keyframes shineText { to { background-position: 200% center; } }
+
+    /* 🎯 CENTERED NAVIGATION MENU */
+    .nav-tabs {
+      flex: 0 1 auto;
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 5px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      padding: 8px 16px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-muted);
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      white-space: nowrap;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tab-btn:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-1px);
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+      color: #022c22;
+      box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .nav-controls {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .class-selector {
+      display: flex;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 3px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    .class-btn {
+      padding: 6px 14px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-weight: 800;
+      cursor: pointer;
+      border-radius: 7px;
+      transition: all 0.2s ease;
+      font-size: 0.85rem;
+    }
+
+    .class-btn.active {
+      background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+      color: #0f172a;
+      box-shadow: 0 2px 8px rgba(56, 189, 248, 0.4);
+    }
 
     .chapter-select-dropdown, .theme-select-dropdown {
-      background: rgba(255,255,255,0.1); color: var(--text); border: 1px solid var(--border); padding: 6px 10px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 7px 12px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      outline: none;
     }
 
-    .sound-btn, .admin-btn { background: rgba(255,255,255,0.1); color: var(--text); border: 1px solid var(--border); padding: 6px 12px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.85rem; }
-    .sound-btn:hover, .admin-btn:hover { background: var(--accent-purple); color: #fff; }
+    .chapter-select-dropdown:hover, .theme-select-dropdown:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--accent-blue);
+    }
+
+    .sound-btn, .admin-btn {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 7px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .admin-btn {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(168, 85, 247, 0.05));
+      border-color: rgba(168, 85, 247, 0.4);
+    }
+
+    .admin-btn:hover {
+      background: var(--accent-purple);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .sound-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-1px);
+    }
+
+    /* 📱 RESPONSIVE MEDIA QUERY */
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        justify-content: center;
+      }
+      .logo { justify-content: center; }
+      .nav-controls { justify-content: center; }
+    }
 
     .container { max-width: 1100px; margin: 25px auto; padding: 0 15px; }
     .tab-content { display: none; }
@@ -141,14 +290,17 @@
 <body data-theme="slate">
 
   <header>
-    <div class="logo">💻 ICT 7th Grade - Teacher Narankhuu B</div>
+    <div class="logo">⚡ ICT 7th Grade-Narankhuu B</div>
+    
+    <!-- CENTERED NAV TABS -->
     <div class="nav-tabs">
       <button class="tab-btn active" onclick="switchTab('wheels')">🎡 Хүрд</button>
-      <button class="tab-btn" onclick="switchTab('bird')">🦜 Шувуу Онох (Typing)</button>
+      <button class="tab-btn" onclick="switchTab('bird')">🦜 Шувуу Онох</button>
       <button class="tab-btn" onclick="switchTab('matching')">🔗 Холбох</button>
       <button class="tab-btn" onclick="switchTab('word')">🧩 Үг таах</button>
       <button class="tab-btn" onclick="switchTab('speed')">⚡ Speed Quiz</button>
     </div>
+
     <div class="nav-controls">
       <!-- CHAPTER FILTER -->
       <select id="header-chapter-select" class="chapter-select-dropdown" onchange="changeChapterFilter()">
@@ -157,11 +309,11 @@
 
       <!-- THEME SWITCHER -->
       <select id="header-theme-select" class="theme-select-dropdown" onchange="changeTheme(this.value)">
-        <option value="slate">🎨 Фон: Dark Slate</option>
-        <option value="purple">🎨 Фон: Cyber Purple</option>
-        <option value="ocean">🎨 Фон: Deep Ocean</option>
-        <option value="forest">🎨 Фон: Emerald Forest</option>
-        <option value="light">🎨 Фон: Light Clean</option>
+        <option value="slate">🎨 Dark Slate</option>
+        <option value="purple">🎨 Cyber Purple</option>
+        <option value="ocean">🎨 Deep Ocean</option>
+        <option value="forest">🎨 Emerald Forest</option>
+        <option value="light">🎨 Light Clean</option>
       </select>
 
       <div class="class-selector">
@@ -169,8 +321,8 @@
         <button class="class-btn" onclick="switchClass('7Б')">7Б</button>
       </div>
 
-      <button class="sound-btn" id="soundToggleBtn" onclick="toggleSound()">🔊 Дуу: Асаалттай</button>
-      <button class="admin-btn" onclick="openAdmin()">⚙️ Admin Panel</button>
+      <button class="sound-btn" id="soundToggleBtn" onclick="toggleSound()">🔊 Дуу</button>
+      <button class="admin-btn" onclick="openAdmin()">⚙️ Админ</button>
     </div>
   </header>
 
@@ -253,7 +405,7 @@
 
     <!-- TAB 5: SPEED QUIZ -->
     <div id="tab-speed" class="tab-content">
-      <div class="section-title">⚡ Speed Quiz (Сонгосон бүлэг сэдвээр)</div>
+      <div class="section-title">⚡ Speed Quiz (Сонгосон бүлэг сэдэв)</div>
       <div class="quiz-box">
         <div class="quiz-header">
           <div>Асуулт: <span id="quiz-progress">1/5</span></div>
@@ -402,7 +554,7 @@
 
     function toggleSound() {
       soundEnabled = !soundEnabled;
-      document.getElementById('soundToggleBtn').innerText = soundEnabled ? '🔊 Дуу: Асаалттай' : '🔇 Дуу: Хаалттай';
+      document.getElementById('soundToggleBtn').innerText = soundEnabled ? '🔊 Дуу' : '🔇 Дуу';
       if(!soundEnabled) stopBGM();
     }
 
@@ -603,7 +755,7 @@
 
         let sliceColor = colors[i % colors.length];
         if(i === highlightIdx) {
-          ctx.fillStyle = '#f59e0b'; // Gold highlight
+          ctx.fillStyle = '#f59e0b';
           ctx.shadowBlur = 20;
           ctx.shadowColor = '#f59e0b';
         } else {
@@ -650,17 +802,15 @@
       const pointerEl = document.getElementById(pointerId);
       
       let startAngle = wheelAngles[canvasId] || 0;
-      let totalSpins = 8 + Math.random() * 5; // 8-13 full rotations
+      let totalSpins = 8 + Math.random() * 5;
       let randomOffset = Math.random() * 2 * Math.PI;
       let targetAngle = startAngle + totalSpins * 2 * Math.PI + randomOffset;
       
       let startTime = null;
-      let duration = 3500; // 3.5 seconds spin
+      let duration = 3500;
       let lastSliceIndex = -1;
 
-      function easeOutQuart(t) {
-        return 1 - Math.pow(1 - t, 4);
-      }
+      function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
 
       function animate(timestamp) {
         if (!startTime) startTime = timestamp;
@@ -671,14 +821,12 @@
         let currentAngle = startAngle + (targetAngle - startAngle) * easeProgress;
         wheelAngles[canvasId] = currentAngle;
 
-        // Calculate which slice is currently under top pointer (-PI/2 angle)
         let numItems = items.length;
         let arc = (2 * Math.PI) / numItems;
         let normalizedAngle = (currentAngle % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI);
         let pointerAngle = (1.5 * Math.PI - normalizedAngle + 2 * Math.PI) % (2 * Math.PI);
         let currentSliceIndex = Math.floor(pointerAngle / arc) % numItems;
 
-        // Trigger tick sound & pointer bounce animation on slice change
         if (currentSliceIndex !== lastSliceIndex) {
           lastSliceIndex = currentSliceIndex;
           playSound('spin');
